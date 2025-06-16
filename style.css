@@ -1,0 +1,496 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    --primaria: #ffabff;
+    --secundaria: #ff91ef;
+    --escuro: #211e21;
+    --maisescuro: #0d0d0d;
+    --claro: #fcf7fc;
+    --vidro: rgba(255, 255, 255, 0.1);
+    --fundoum: #ffd0f7;
+    --fundodois: #ff86f5;
+}
+body {
+    background: linear-gradient(90deg, var(--claro), var(--fundodois));
+    color: var(--maisescuro);
+}
+.navegacao {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+}
+.menu-link {
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem;
+}
+.menu-link::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    transition: width 0.5s ease;
+}
+.menu-link:hover::after {
+    width: 100%;
+}
+.cabecalho {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.foto-perfil {
+    margin-top: 100px;
+    width: 370px;
+    height: 420px;
+    box-shadow: 0 0 20px rgba(70, 19, 70, 0.3);
+    border-radius: 40%;
+    border: 4px solid var(--vidro);
+}
+h1 {
+    font-size: 3.5rem;
+    color: var(--maisescuro);
+    font-weight: bold;
+    margin: 20px;
+}
+.cabecalho-sub-titulo {
+    font-size: 1.5rem;
+    color: var(--maisescuro);
+}
+.sobre {
+ padding: 6rem 2rem;
+}
+.sobre-titulo {
+    font-size: 3rem;
+    color: var(--maisescuro);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.sobre-caixa {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid var(--vidro);
+    backdrop-filter: blur(10px);
+    background: rgba(53, 33, 50, 0.05);
+}
+.sobre-paragrafo {
+    text-align: center;
+    font-size: 1.2rem;
+}
+.materias {
+    padding: 6rem 2rem;
+}
+.materias-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.materias-card {
+    background: rgba(53, 33, 50, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    overflow: hidden;
+    padding: 10px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.materias-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+.materias-card:hover {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.8);
+    transform: translateY(-10px) scale(1.03);
+}
+.materias-imagem {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+.caixa-textos {
+    padding: 1.5rem;
+
+}
+.paragrafo-materias {
+    color: var(--maisescuro);
+    line-height: 1.25rem;
+}
+.info-materias {
+    margin-bottom: 5px;
+}
+.projetos {
+    padding: 6rem 2rem;
+}
+.projetos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.projetos-card {
+    background: rgba(53, 33, 50, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    overflow: hidden;
+    padding: 10px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.projetos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+.projetos-card:hover {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.8);
+    transform: translateY(-10px) scale(1.03);
+}
+.projetos-imagem {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+.caixa-textos {
+    padding: 1.5rem;
+
+}
+.paragrafo-projetos {
+    color: var(--maisescuro);
+    line-height: 1.25rem;
+}
+.info-projetos {
+    margin-bottom: 5px;
+}
+.caixa-botoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+.botoes {
+    background-color: var(--primaria);
+    margin: 15px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid var(--fundodois);
+}
+.botoes:hover {
+    box-shadow: 0 10px 20px rgba(244, 142, 253, 0.8);
+    transform: scale(1.01);
+}
+.b {
+    font-size: 1.01rem;
+    color: var(--maisescuro);
+    text-decoration: none;
+    font-style: normal;
+}
+.atividades {
+    padding: 6rem 2rem;
+}
+.testes {
+    background: rgba(53, 33, 50, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    margin: 20px;
+    padding: 15px;
+}
+.testes:hover {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.8);
+    transform: translateY(-10px) scale(1.03);
+    cursor: pointer;
+}
+.sep-botoes {
+    display: flex;
+}
+.atividades-titulo {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+.exer-atividades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+.aulas-titulo {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.aulas {
+    margin: 50px;
+}
+.aulas-card{
+    background: rgba(53, 33, 50, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+.aulas-card:hover {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.8);
+    transform: translateY(-10px) scale(1.03);
+    cursor: pointer;
+}
+.inf-aulas {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+.paragrafo-aulas {
+    color: var(--maisescuro);
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    margin: 20px;
+}
+.contatos {
+    padding: 6rem 2rem;
+}
+.contatos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* Seção de Contatos */
+.contatos {
+    border-radius: 40px;
+    backdrop-filter: blur(10px);
+    background: rgba(53, 33, 50, 0.05);
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.contatos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.contatos-titulo {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.contatos-titulo::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: #ffffff;
+    display: block;
+    margin: 20px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Formulário */
+.formalario {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.formalario label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.formalario input,
+.formalario textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 1rem;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    background: #ffffff;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.formalario input:focus,
+.formalario textarea:focus {
+    outline: none;
+    border-color: #ffadf1;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.formalario input:hover,
+.formalario textarea:hover {
+    border-color: var(--fundodois);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.formalario textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.formalario button {
+    background: linear-gradient(135deg, var(--fundoum) 0%, var(--fundodois) 100%);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.formalario button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 177, 232, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.formalario button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(245, 151, 229, 0.4);
+}
+
+.formalario button:hover::before {
+    left: 100%;
+}
+
+.formalario button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(255, 129, 234, 0.3);
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estados de validação */
+.formalario input:valid,
+.formalario textarea:valid {
+    border-color: #ff9be1;
+}
+
+.formalario input:invalid:not(:placeholder-shown),
+.formalario textarea:invalid:not(:placeholder-shown) {
+    border-color: #ffa4fa;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contatos {
+        padding: 40px 15px;
+    }
+    
+    .contatos-titulo {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+    
+    .formalario {
+        padding: 30px 20px;
+        margin: 0 10px;
+    }
+    
+    .formalario input,
+    .formalario textarea {
+        padding: 12px 15px;
+        margin-bottom: 20px;
+    }
+    
+    .formalario button {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contatos-titulo {
+        font-size: 1.8rem;
+    }
+    
+    .formalario {
+        padding: 25px 15px;
+    }
+}
